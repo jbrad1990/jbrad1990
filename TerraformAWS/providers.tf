@@ -12,8 +12,8 @@ provider "aws" {
   shared_credentials_file = "/Users/BradleyJ/.aws/credentials"
   region                  = "us-east-1"
   profile                 = "vscode"
-  access_key              = "AKIAXOYEYDDRFDATILI6"
-  secret_key              = "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"
+  access_key              = "private"
+  secret_key              = "private"
 }
 
 resource "aws_budgets_budget" "like-and-subscribe" {
