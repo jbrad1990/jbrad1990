@@ -70,8 +70,8 @@ resource "aws_security_group" "main_sg"{
 }
 
 resource "aws_key_pair" "main_auth"{
-    key_name = "sshkey"
-    public_key = file("C:/Users/BradleyJ/.ssh/sshkey.pub")
+    key_name = "mainkey"
+    public_key = file("C:/Users/me/.ssh/mainkey.pub")
 }
 
 resource "aws_instance" "dev_node"{
@@ -93,7 +93,7 @@ user_data = file("userdata.tpl")
 command = templatefile("${var.host_os}-ssh-config.tpl", {
       hostname = self.public_ip,
       user     = "ubuntu",
-    identityfile = "~/.ssh/BradleyJ" })
+    identityfile = "~/.ssh/" })
     interpreter = var.host_os == "windows" ? ["Powershell", "-Command"] : ["bash", "-c"] 
   }
 }
